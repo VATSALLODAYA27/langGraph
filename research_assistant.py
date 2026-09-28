@@ -409,6 +409,7 @@ builder.add_edge("research", "human")  # the reviewer inside research already gr
 builder.add_conditional_edges("human", after_human, ["research", END])
 # check_same_thread=False: parallel search nodes run in other threads and share this connection.
 memory = SqliteSaver(sqlite3.connect("memory.db", check_same_thread=False))
+memory.setup()  # create the tables now; otherwise a brand-new memory.db has none until the first save
 graph = builder.compile(checkpointer=memory)
 
 
