@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+# saved conversations (private)
+memory.db*
+# local Claude Code settings
+.claude/
